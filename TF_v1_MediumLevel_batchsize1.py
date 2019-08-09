@@ -37,7 +37,7 @@ pred = tf.nn.sigmoid(tf.add(tf.matmul(h, W_o), b_o))
 
 E = tf.reduce_sum(tf.pow(pred - Y, 2))
 optimizer = tf.train.GradientDescentOptimizer(0.1)
-grads = optimizer.compute_gradients(E, [W_h, b_h, W_o, b_h])
+grads = optimizer.compute_gradients(E, [W_h, b_h, W_o, b_o])
 updates = optimizer.apply_gradients(grads)
 
 
